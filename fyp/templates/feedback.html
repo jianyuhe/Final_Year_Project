@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+</head>
+<style type="text/css">
+    body {font-family: Arial, Helvetica, sans-serif;
+     background-image: url("{% static "image/loginbg2.jpg" %}");}
+form {border: 3px solid #f1f1f1;}
+
+label {
+  visibility: hidden;
+}
+
+
+input[type=submit]{
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+}
+
+  </style>
+<body>
+<h1 align="center">Feedback</h1 >
+<form method = 'post' enctype="multipart/form-data" align="center">
+
+{{ta.as_p}}
+
+ <input type="submit" value="Update">
+
+</form>
+<p align="center">{{ submit }}</p>
+</br>
+
+</body>
+</html>

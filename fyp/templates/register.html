@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>User Login</title>
+</head>
+  <style type="text/css">
+    body {font-family: Arial, Helvetica, sans-serif;
+     background-image: url("{% static "image/loginbg2.jpg" %}");}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+}
+input[type=submit]{
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+}
+
+  </style>
+<body>
+<h1 align="center">Register Page</h1>
+<form method = 'post' enctype="multipart/form-data" align="center">
+{{uf.as_p}}
+{{errors}}
+{{succ}}
+</br>
+<input type="submit" value = "Register" />
+</form>
+</br>
+<p align="center">
+<button type="submit"  onclick="location.href='{% url 'login'%}'">
+    Login
+</button>
+</p>
+</body>
+</html>

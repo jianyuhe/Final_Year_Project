@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>User Login</title>
+</head>
+  <style type="text/css">
+    body {font-family: Arial, Helvetica, sans-serif;
+     background-image: url("{% static "image/loginbg2.jpg" %}");}
+form {border: 3px solid #f1f1f1;}
+      button {
+  background-color: #008CBA;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+      .center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block
+}
+      iframe {
+
+       margin-left: auto;
+       margin-right: auto;
+
+      }
+  </style>
+<body>
+<h1 align="center">EPL Parking</h1 >
+<table style="width:100%">
+  <tr>
+    <th><button type="submit"  onclick="location.href='http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=125+S+Prospect+Ave,+Elmhurst,+IL+60126&amp;sll=37.0625,-95.677068&amp;sspn=52.68309,114.257812&amp;ie=UTF8&amp;g=125+S+Prospect+Ave,+Elmhurst,+IL+60126&amp;ll=41.907707,-87.940578&amp;spn=0.022357,0.036478&amp;z=14&amp;iwloc=addr&amp;source=embed'" >
+    Location
+</button></th>
+    <th><button type="submit"  onclick="location.href='{% url 'feedback'%}'" >
+    Feedback
+</button></th>
+  </tr>
+</table>
+<video id="myVideo" width="960" height="540" muted autoplay="autoplay" loop = "loop" class="center">
+  <source src="{% static "final.mp4" %}" type="video/mp4"/>
+</video>
+
+{#<iframe src="https://www.youtube.com/embed/SryKyx4w9_U?autoplay=1" width="640" height="361" frameborder="0"#}
+{#        allow="autoplay"  ></iframe>#}
+
+<br/>
+
+{#<form method = 'post' enctype="multipart/form-data">#}
+{##}
+{#{{ps.as_p}}#}
+{#    <input type="submit" value="Select">#}
+{##}
+{#</form>#}
+{#</br>#}
+{#<h4>Available Space: {{ no }}</h4>#}
+
+
+
+<button onclick="up()" type="button">Speed Up</button><br>
+<button onclick="down()" type="button">Speed down</button><br>
+{##}
+<script>
+var vid = document.getElementById("myVideo");
+function up() {
+  vid.playbackRate = 5;
+}
+
+function down() {
+  vid.playbackRate = 1;
+}
+</script>
+</body>
+</html>
